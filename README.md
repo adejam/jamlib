@@ -14,9 +14,9 @@ It demostrates the use of javascript objects to store information.
 
 - CSS
 
-   - CSS Flexbox
+  - CSS Flexbox
 
-   - CSS Media Query
+  - CSS Media Query
 
 - [Bootstrap framework](https://getbootstrap.com/)
 
@@ -25,7 +25,6 @@ It demostrates the use of javascript objects to store information.
 - [stylint](https://stylelint.io/)
 
 - [NPM](https://www.npmjs.com/)
-
 
 ## Live Demo
 
@@ -84,7 +83,9 @@ npm run html-validator
 - [Git Style Guide](https://udacity.github.io/git-styleguide/)
 
 ## 👤 Author
+
 ### Adeleye Jamiu
+
 - Github: [@adejam](http://github.com/adejam)
 - Twitter: [@adeleye_oj](https://twitter.com/Adeleye_oj)
 - LinkedIn: [@adeleye-jamiu](https://linkedin.com/in/adeleye-jamiu)
