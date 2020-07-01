@@ -18,7 +18,7 @@ It demostrates the use of javascript objects to store information.
 
    - CSS Media Query
 
-- Bootstrap
+- [Bootstrap framework](https://getbootstrap.com/)
 
 - Javascript
 
@@ -110,6 +110,8 @@ Give a ⭐️ if you like this project!
 - [MDN](https://developer.mozilla.org/)
 
 - [w3schools](https://www.w3schools.com/)
+
+- [Bootstrap framework](https://getbootstrap.com/)
 
 ## 📝 License
 
