@@ -75,6 +75,12 @@ class Design {
 
     bookRow.appendChild(itemDiv);
   }
+
+  static clearFields() {
+    document.querySelector('#author').value = '';
+    document.querySelector('#bookTitle').value = '';
+    document.querySelector('#noOfPages').value = '';
+  }
 }
 
 function createBook(e) {
@@ -85,4 +91,5 @@ function createBook(e) {
   const readStatus = document.querySelector('#readStatus').checked;
   const newBook = new Book(author, bookTitle, noOfPages, readStatus);
   Design.addBookToList(newBook);
+  Design.clearFields();
 }
