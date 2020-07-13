@@ -15,8 +15,8 @@ class Design {
     if (newBook.readStatus == true) {
       status = `
        <div class="form-check ">
-        <label class="form-check-label changeStatus" data-identity="${newBook.id}">
-          <input type="checkbox" class="form-check-input changeStatus" data-identity="${newBook.id}" checked />
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" checked />
           You have read this book!
         </label>
        </div>
@@ -24,8 +24,8 @@ class Design {
     } else {
       status = `
        <div class="form-check ">
-         <label class="form-check-label changeStatus" data-identity="${newBook.id}">
-           <input type="checkbox" class="form-check-input changeStatus" data-identity="${newBook.id}"/>
+         <label class="form-check-label">
+           <input type="checkbox" class="form-check-input"/>
            You should read this book!
          </label>
        </div>
@@ -81,6 +81,11 @@ class Design {
     document.querySelector('#bookTitle').value = '';
     document.querySelector('#noOfPages').value = '';
   }
+
+  static displayBooks() {
+    const books = BookStorage.getBooks();
+    books.forEach(book => Design.addBookToList(book));
+  }
 }
 
 class BookStorage {
@@ -114,3 +119,5 @@ function createBook(e) {
   Design.clearFields();
   window.location.reload();
 }
+
+document.addEventListener('DOMContentLoaded', Design.displayBooks);
