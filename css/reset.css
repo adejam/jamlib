@@ -89,7 +89,6 @@ a:hover {
   text-decoration: none;
 }
 
-
 .ta_center {
   text-align: center;
 }
@@ -118,35 +117,34 @@ a:hover {
   display: none;
 }
 
-.b_b{
-
-	border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+.b_b {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
 
-.border{
-	border: 1px solid rgba(0, 0, 0, 0.125);
+.border {
+  border: 1px solid rgba(0, 0, 0, 0.125);
 }
 
-.border_none{
-	border: none;
+.border_none {
+  border: none;
 }
 
-.bg_White{
-	background-color: #fff;
+.bg_White {
+  background-color: #fff;
 }
 
-.p_10{
-	padding: 10px;
+.p_10 {
+  padding: 10px;
 }
 
-.br_30{
-	border-radius: 30%;
+.br_30 {
+  border-radius: 30%;
 }
 
-.m_10{
-	margin: 10px;
+.m_10 {
+  margin: 10px;
 }
 
-.mb_10{
-	margin-bottom: 10px;
+.mb_10 {
+  margin-bottom: 10px;
 }
