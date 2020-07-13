@@ -83,6 +83,25 @@ class Design {
   }
 }
 
+class BookStorage {
+  static getBooks() {
+    let books;
+    if (localStorage.getItem('book') === null) {
+      books = [];
+    } else {
+      books = JSON.parse(localStorage.getItem('book'));
+    }
+
+    return books;
+  }
+
+  static addBook(book) {
+    const books = BookStorage.getBooks();
+    books.push(book);
+    localStorage.setItem('book', JSON.stringify(books));
+  }
+}
+
 function createBook(e) {
   e.preventDefault();
   const author = document.querySelector('#author').value;
@@ -90,6 +109,8 @@ function createBook(e) {
   const noOfPages = document.querySelector('#noOfPages').value;
   const readStatus = document.querySelector('#readStatus').checked;
   const newBook = new Book(author, bookTitle, noOfPages, readStatus);
+  BookStorage.addBook(newBook);
   Design.addBookToList(newBook);
   Design.clearFields();
+  window.location.reload();
 }
