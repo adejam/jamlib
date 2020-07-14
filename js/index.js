@@ -1,6 +1,6 @@
-import BookStorage from './storage.js';
-import Design from './design.js';
-import Book from './book.js';
+import BookStorage from './storage';
+import Design from './design';
+import Book from './book';
 
 const form = document.querySelector('#bookForm');
 const bookRow = document.querySelector('#bookRow');
