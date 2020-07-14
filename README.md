@@ -6,7 +6,7 @@
 
 The project follows the guideline of [the odin project](https://www.theodinproject.com/courses/javascript/lessons/library?ref=lnav) to build a library application using javascript for DOM manipulation and interaction and Bootstrap for user interface design.
 
-It demostrates the use of javascript objects to store information.
+It demostrates the use of javascript objects and classes to store data.
 
 ## Technology Used
 
