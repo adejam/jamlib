@@ -1,7 +1,7 @@
 const form = document.querySelector('#bookForm');
 form.addEventListener('submit', createBook);
 const bookRow = document.querySelector('#bookRow');
-bookRow.addEventListener('click', removeBook);
+bookRow.addEventListener('click', removeBookOrChangeStatus);
 
 class Book {
   constructor(id, author, bookTitle, noOfPages, readStatus) {
@@ -36,8 +36,8 @@ class Design {
     if (newBook.readStatus == true) {
       status = `
        <div class="form-check ">
-        <label class="form-check-label">
-          <input type="checkbox" class="form-check-input" checked />
+        <label class="form-check-label changeStatus" data-identity="${newBook.id}">
+          <input type="checkbox" class="form-check-input changeStatus" data-identity="${newBook.id}" checked />
           You have read this book!
         </label>
        </div>
@@ -45,8 +45,8 @@ class Design {
     } else {
       status = `
        <div class="form-check ">
-         <label class="form-check-label">
-           <input type="checkbox" class="form-check-input"/>
+         <label class="form-check-label changeStatus" data-identity="${newBook.id}">
+           <input type="checkbox" class="form-check-input changeStatus" data-identity="${newBook.id}"/>
            You should read this book!
          </label>
        </div>
@@ -114,6 +114,12 @@ class Design {
       et.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.remove();
     }
   }
+
+  static editStatus(id) {
+    if (confirm('sure to change book status?') == true) {
+      BookStorage.updateStatus(id);
+    }
+  }
 }
 
 class BookStorage {
@@ -145,9 +151,24 @@ class BookStorage {
     localStorage.setItem('book', JSON.stringify(books));
     window.location.reload();
   }
+
+  static updateStatus(id) {
+    const books = BookStorage.getBooks();
+    books.forEach((book, index) => {
+      if (book.id == id) {
+        console.log(book.readStatus);
+        if (book.readStatus == true) {
+          book.readStatus = false;
+        } else {
+          book.readStatus = true;
+        }
+      }
+    });
+    localStorage.setItem('book', JSON.stringify(books));
+    window.location.reload();
+  }
 }
-// const books = BookStorage.getBooks();
-// console.log(books.length -= 1);
+
 function createBook(e) {
   e.preventDefault();
   const id = Book.id;
@@ -162,10 +183,12 @@ function createBook(e) {
   window.location.reload();
 }
 
-function removeBook(e) {
+function removeBookOrChangeStatus(e) {
   e.preventDefault();
   if (e.target.classList.contains('removeBtn')) {
     Design.deleteBook(e.target);
+  } else if (e.target.classList.contains('changeStatus')) {
+    Design.editStatus(e.target.dataset.identity);
   }
 }
 
